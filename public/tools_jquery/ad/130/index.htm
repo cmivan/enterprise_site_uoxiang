@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>轮换图片</title>
+<style type="text/css"> 
+/* Reset style */
+* { margin:0; padding:0; word-break:break-all; }
+body { background:#FFF; color:#333; font:12px/1.6em Helvetica, Arial, sans-serif; }
+h1, h2, h3, h4, h5, h6 { font-size:1em; }
+a { color:#039; text-decoration:none; }
+ a:hover { text-decoration:underline; }
+ul, li { list-style:none; }
+fieldset, img { border:none; }
+em, strong, cite, th { font-style:normal; font-weight:normal; }
+/* Focus_change style */
+#focus_change { position:relative; width:679px; height:328px; overflow:hidden;   }
+ #focus_change_list { position:absolute; width:3395px; height:295px; top:50px }
+ 
+  #focus_change_list li { float:left;top:50px }
+  #focus_change_list li img { width:679px; height:328px;top:50px }
+  
+ .focus_change_opacity { position:absolute; width:205px; height:20px; top:10px; left:480px; filter:alpha(opacity=50); -moz-opacity:0.5; opacity: 0.5; }
+ #focus_change_btn { position:absolute; width:205px; height:20px; top:10px;left:480px;   }
+ 
+  #focus_change_btn ul { padding-left:5px; }
+  #focus_change_btn li { display:inline; float:left; width:20px; height:20px; text-align:center;margin-left:6px;  }
+  #focus_change_btn .current { background-image:url("images/move.jpg"/*tpa=http://ad.zoomla.cn/ad/130/images/move.jpg*/); width:20px; color:#FFF; height:20px; margin-left:6px; text-align:center }
+ #topmenu{ float:left}
+ #topmenu_list {width:3395px; height:20px; }
+ 
+ #focus_change_btn .top1 {width:20px; height:20px; text-align:center; background-image:url("images/AdPic_r2_c2.jpg"/*tpa=http://ad.zoomla.cn/ad/130/images/AdPic_r2_c2.jpg*/) }
+ #focus_change_btn .end1 {width:20px; height:20px; text-align:center; background-image:url("images/AdPic_r2_c14.jpg"/*tpa=http://ad.zoomla.cn/ad/130/images/AdPic_r2_c14.jpg*/) }
+ 
+ #focus_change_btn .top2 {width:20px; height:20px; text-align:center; background-image:url("images/AdPic_r2_c21.jpg"/*tpa=http://ad.zoomla.cn/ad/130/images/AdPic_r2_c21.jpg*/) }
+ #focus_change_btn .end2 {width:20px; height:20px; text-align:center; background-image:url("images/AdPic_r2_c141.jpg"/*tpa=http://ad.zoomla.cn/ad/130/images/AdPic_r2_c141.jpg*/) }
+ 
+  .showimgtxt { position:absolute; width:205px; height:20px; top:10px; left:5px; -moz-opacity:0.5; opacity: 0.5; }
+ 
+ 
+</style>
+<script type="text/javascript"> 
+var thisid=0;
+function $(id) { return document.getElementById(id); }
+function moveElement(elementID,final_x,final_y,interval) {
+  if (!document.getElementById) return false;
+  if (!document.getElementById(elementID)) return false;
+  var elem = document.getElementById(elementID);
+  if (elem.movement) {
+    clearTimeout(elem.movement);
+  }
+  if (!elem.style.left) {
+    elem.style.left = "0px";
+  }
+  if (!elem.style.top) {
+    elem.style.top = "50px";
+  }
+  var xpos = parseInt(elem.style.left);
+  var ypos = parseInt(elem.style.top);
+  if (xpos == final_x && ypos == final_y) {
+  return true;
+  }
+  if (xpos < final_x) {
+    var dist = Math.ceil((final_x - xpos)/10);
+    xpos = xpos + dist;
+  }
+  if (xpos > final_x) {
+    var dist = Math.ceil((xpos - final_x)/10);
+    xpos = xpos - dist;
+  }
+  if (ypos < final_y) {
+    var dist = Math.ceil((final_y - ypos)/10);
+    ypos = ypos + dist;
+  }
+  if (ypos > final_y) {
+    var dist = Math.ceil((ypos - final_y)/10);
+    ypos = ypos - dist;
+  }
+  elem.style.left = xpos + "px";
+  elem.style.top = ypos + "px";
+  var repeat = "moveElement('"+elementID+"',"+final_x+","+final_y+","+interval+")";
+  elem.movement = setTimeout(repeat,interval);
+}
+function classNormal(){
+ var focusBtnList = $('focus_change_btn').getElementsByTagName('li');
+ for(var i=0; i<focusBtnList.length; i++) {
+  focusBtnList[i].className='';
+ }
+ focusBtnList[0].className='top1';
+ focusBtnList[6].className='end1';
+}
+ 
+function focusChange() {
+	 var Imgbtnlist = $('focus_change_list').getElementsByTagName('li');
+ 	 var focusBtnList = $('focus_change_btn').getElementsByTagName('li');
+ 
+   focusBtnList[1].onmouseover = function() {
+   moveElement('focus_change_list',0,50,5);
+   classNormal()
+   focusBtnList[1].className='current'
+   	var t1 = Imgbtnlist[1].innerHTML.split('src')[0];
+	var t2 = t1.split('=')[1];
+	document.getElementById("show1").innerHTML=t2;
+	var t1 = Imgbtnlist[0].innerHTML.split('src')[0];
+	var t2 = t1.split('=')[1];
+	document.getElementById("show1").innerHTML=t2;
+	document.getElementById("show1").style.color = "F60";
+	thisid=1;
+	focusBtnList[0].className='top1';
+    focusBtnList[6].className='end1';
+  }
+  
+  focusBtnList[2].onmouseover = function() {
+   moveElement('focus_change_list',-679,50,5);
+   classNormal()
+   focusBtnList[2].className='current'
+   var t1 = Imgbtnlist[1].innerHTML.split('src')[0];
+	var t2 = t1.split('=')[1];
+	document.getElementById("show1").innerHTML=t2;
+	document.getElementById("show1").style.color = "F60";
+	thisid=2;
+	focusBtnList[0].className='top2';
+    focusBtnList[6].className='end1';
+  }
+  focusBtnList[3].onmouseover = function() {
+   moveElement('focus_change_list',-1358,50,5);
+   classNormal()
+   focusBtnList[3].className='current'
+    var t1 = Imgbtnlist[2].innerHTML.split('src')[0];
+	var t2 = t1.split('=')[1];
+	document.getElementById("show1").innerHTML=t2;
+	document.getElementById("show1").style.color = "F60";
+	thisid=3;
+	focusBtnList[0].className='top2';
+    focusBtnList[6].className='end1';
+  }
+  focusBtnList[4].onmouseover = function() {
+   moveElement('focus_change_list',-2037,50,5);
+   classNormal()
+   focusBtnList[4].className='current'
+    var t1 = Imgbtnlist[3].innerHTML.split('src')[0];
+	var t2 = t1.split('=')[1];
+	document.getElementById("show1").innerHTML=t2;
+	document.getElementById("show1").style.color = "F60";
+	thisid=4;
+	focusBtnList[0].className='top2';
+    focusBtnList[6].className='end1';
+  }
+    focusBtnList[5].onmouseover = function() {
+   moveElement('focus_change_list',-2716,50,5);
+   classNormal()
+   focusBtnList[5].className='current'
+    var t1 = Imgbtnlist[4].innerHTML.split('src')[0];
+	var t2 = t1.split('=')[1];
+	document.getElementById("show1").innerHTML=t2;
+	document.getElementById("show1").style.color = "F60";
+	thisid=5;
+	focusBtnList[0].className='top2';
+    focusBtnList[6].className='end2';
+  }
+}
+//setInterval('autoFocusChange()', 5000);
+var atuokey = false;
+function autoFocusChange() {
+ $('focus_change').onmouseover = function(){atuokey = true}
+ $('focus_change').onmouseout = function(){atuokey = false}
+ if(atuokey) return;
+ 
+ 
+ var Imgbtnlist = $('focus_change_list').getElementsByTagName('li');
+ var focusBtnList = $('focus_change_btn').getElementsByTagName('li');
+ for(var i=0; i<focusBtnList.length; i++) {
+  if (focusBtnList[i].className == 'current') {
+   var currentNum = i;
+  }
+ }
+ if (currentNum==0 ){
+  moveElement('focus_change_list',-679,50,5);
+  classNormal()
+  focusBtnList[1].className='current'
+ }
+ if (currentNum==1 ){
+  moveElement('focus_change_list',-1358,50,5);
+  classNormal()
+  focusBtnList[2].className='current'
+ }
+ if (currentNum==2 ){
+  moveElement('focus_change_list',-2037,50,5);
+  classNormal()
+  focusBtnList[3].className='current'
+ } 
+  if (currentNum==4 ){
+  moveElement('focus_change_list',-2716,50,5);
+  classNormal()
+  focusBtnList[5].className='current'
+ }
+ if (currentNum==5 ){
+  moveElement('focus_change_list',0,50,5);
+  classNormal()
+  focusBtnList[0].className='current'
+ }
+}
+window.onload=function(){
+ focusChange();
+ 
+ 
+   var Imgbtnlist = $('focus_change_list').getElementsByTagName('li');
+   var focusBtnList = $('focus_change_btn').getElementsByTagName('li');
+ 
+   	var t1 = Imgbtnlist[1].innerHTML.split('src')[0];
+	var t2 = t1.split('=')[1];
+	document.getElementById("show1").innerHTML=t2;
+	var t1 = Imgbtnlist[0].innerHTML.split('src')[0];
+	var t2 = t1.split('=')[1];
+	document.getElementById("show1").innerHTML=t2;
+	document.getElementById("show1").style.color = "F60";
+}
+</script>
+</head>
+<body>
+<div id="focus_change">
+  <div id="focus_change_list">
+    <ul>
+      <li><img src="images/AdPic_r4_c1.jpg" tppabs="130/images/AdPic_r4_c1.jpg" alt="最新动态1" width="679" height="328" /></li>
+      <li><img src="images/AdPic_r4_c1.jpg" tppabs="130/images/AdPic_r4_c1.jpg" alt="最新动态2" /></li>
+      <li><img src="images/AdPic_r4_c1.jpg" tppabs="130/images/AdPic_r4_c1.jpg" alt="最新动态3" /></li>
+      <li><img src="images/AdPic_r4_c1.jpg" tppabs="130/images/AdPic_r4_c1.jpg" alt="最新动态4" /></li>
+      <li><img src="images/AdPic_r4_c1.jpg" tppabs="130/images/AdPic_r4_c1.jpg" alt="最新动态5" /></li>
+    </ul>
+  </div>
+
+  <div class="showimgtxt" id="show1" name="show1"></div>
+  <div class="focus_change_opacity"></div>
+  <div id="focus_change_btn">
+    <ul>
+      <li class="top1"> </li>
+      <li class="current">1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li class="end1"> </li>
+    </ul>
+  </div>
+</div>
+<!--focus_change end-->
+</body>
+</html>

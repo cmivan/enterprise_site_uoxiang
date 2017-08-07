@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JS图片卷帘门效果 </title>
+<link href="css/style.css" tppabs="104/css/style.css" rel="stylesheet" type="text/css" />
+
+	<script type="text/javascript" src="js/jquery-1.2.6.min.js" tppabs="104/js/jquery-1.2.6.min.js"></script>
+	<script type="text/javascript" src="js/jquery.backgroundPosition.js" tppabs="104/js/jquery.backgroundPosition.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			//Set css in Firefox (Required to use the backgroundPosition js)
+			$('#shutter1').css({backgroundPosition: '0px 0px'});
+			$('#shutter2').css({backgroundPosition: '0px 0px'});
+			$('#shutter3').css({backgroundPosition: '0px 0px'});
+			$('#shutter4').css({backgroundPosition: '0px 0px'});
+
+			//Animate the shutter  
+			$(".link").hover(function(){
+			      $(this).parent().animate({backgroundPosition: '(0px -100px)'}, 500 );
+			    }, function() {
+			      $(this).parent().animate({backgroundPosition: '(0px 0px)'}, 500 );
+			}); 
+		 });
+	</script>
+</head>
+
+<body>
+<DIV align="center" ><br /><br />
+
+<ul id="menuback">
+		<li class="shutter" id="shutter1"><a class="link" href="javascript:if(confirm('http://www.1th.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.1th.cn/'" tppabs="http://www.1th.cn/" target="_blank">Link 1</a></li>
+		<li class="shutter" id="shutter2"><a class="link" href="javascript:if(confirm('http://www.1th.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.1th.cn/'" tppabs="http://www.1th.cn/" target="_blank">Link 2</a></li>
+		<li class="shutter" id="shutter3"><a class="link" href="javascript:if(confirm('http://www.1th.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.1th.cn/'" tppabs="http://www.1th.cn/" target="_blank">Link 3</a></li>
+		<li class="shutter" id="shutter4"><a class="link" href="javascript:if(confirm('http://www.1th.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.1th.cn/'" tppabs="http://www.1th.cn/" target="_blank">Link 4</a></li>
+  </ul>
+
+来源：<a href="javascript:if(confirm('http://css-tricks.com/garage-door-style-menu-using-animated-background-images-with-jquery/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://css-tricks.com/garage-door-style-menu-using-animated-background-images-with-jquery/'" tppabs="http://css-tricks.com/garage-door-style-menu-using-animated-background-images-with-jquery/" target="_blank">CSS-Tricks</a>　代码整理：<a href="javascript:if(confirm('http://www.1th.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.1th.cn/'" tppabs="http://www.1th.cn/" target="_blank">一特站长站</a>　
+</div>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=gb2312" http-equiv="Content-Type" />
+<title>滚动_jquery新闻上下无缝滚动</title>
+<style type="text/css">
+@charset "gb2312";
+body{font-size:12px;}
+*{margin:0px; padding:0px;}
+li{height:20px; line-height:20px;}
+
+.ui_burst_con { width:330px; height:212px; overflow:hidden; margin:0 10px 0 0; clear:both; border:1px #ffd378 solid; background:#fff; border-top:none; padding:5px 0; position:relative; }
+.ui_burst_con .btn { width:19px; height:37px; background:url("images/ico.gif"/*tpa=http://ad.zoomla.cn/ad/139/images/ico.gif*/) left -60px no-repeat; position:absolute; left:260px; top:85px; cursor:pointer; }
+.ui_burst_con .btn .up, .ui_burst_con .btn .down { height:19px; }
+.ui_burst_con li { margin:0 0 0 10px; }
+.ui_burst_con li span { margin:0 0 0 10px; }
+</style>
+</head>
+<body>
+
+<div class="ui_burst_con">
+      <div class="btn">
+        <div class="up"></div>
+        <div class="down"></div>
+      </div>
+      <ul id="burst_list" class="list_f12">
+        <li><a href="javascript:if(confirm('http://www.zoomla.cn/13/content_429685.htm?node=356  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.zoomla.cn/13/content_429685.htm?node=356'" tppabs="http://www.zoomla.cn/13/content_429685.htm?node=356" title="星桥街路口向镋钯街单行 ">星桥街路口向镋钯街单行 </a><span class="cGray">07:18</span></li>
+        <li><a href="javascript:if(confirm('http://www.zoomla.cn/13/content_429701.htm?node=356  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.zoomla.cn/13/content_429701.htm?node=356'" tppabs="http://www.zoomla.cn/13/content_429701.htm?node=356" title="西南民大在川招生742名 ">西南民大在川招生742名</a><span class="cGray">07:23</span></li>
+        <li><a href="javascript:if(confirm('http://www.zoomla.cn/content/2010-06/13/content_429803.htm?node=375  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.zoomla.cn/content/2010-06/13/content_429803.htm?node=375'" tppabs="http://www.zoomla.cn/content/2010-06/13/content_429803.htm?node=375" title="交通压力 南充移栽164棵大树 ">交通压力 南充移栽164棵大树 </a><span class="cGray">07:40</span></li>
+        <li><a href="javascript:if(confirm('http://www.zoomla.cn/content/2010-06/13/content_429654.htm?node=115  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.zoomla.cn/content/2010-06/13/content_429654.htm?node=115'" tppabs="http://www.zoomla.cn/content/2010-06/13/content_429654.htm?node=115" title="云南一服刑人员被称私扯野菜摔死 ">云南一服刑人员被称私扯野菜摔死 </a><span class="cGray">07:16</span></li>
+        <li><a href="javascript:if(confirm('http://www.zoomla.cn/content/2010-06/13/content_429680.htm?node=115  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.zoomla.cn/content/2010-06/13/content_429680.htm?node=115'" tppabs="http://www.zoomla.cn/content/2010-06/13/content_429680.htm?node=115" title="“非遗”申报陷物质化困局 ">“非遗”申报陷物质化困局</a><span class="cGray">07:18</span></li>
+        <li><a href="javascript:if(confirm('http://www.zoomla.cn/content/2010-06/13/content_429700.htm?node=115  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.zoomla.cn/content/2010-06/13/content_429700.htm?node=115'" tppabs="http://www.zoomla.cn/content/2010-06/13/content_429700.htm?node=115" title="男子冒充发改委干部骗老乡被拘 ">男子冒充发改委干部骗老乡被拘</a><span class="cGray">07:22</span></li>
+        <li><a href="javascript:if(confirm('http://www.zoomla.cn/content/2010-06/13/content_429778.htm?node=115  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.zoomla.cn/content/2010-06/13/content_429778.htm?node=115'" tppabs="http://www.zoomla.cn/content/2010-06/13/content_429778.htm?node=115" title="女老师不买单要挟女服务员下跪 ">女老师不买单要挟女服务员下跪</a><span class="cGray">07:33</span></li>
+        <li><a href="javascript:if(confirm('http://www.zoomla.cn/content/2010-06/13/content_429808.htm?node=115  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.zoomla.cn/content/2010-06/13/content_429808.htm?node=115'" tppabs="http://www.zoomla.cn/content/2010-06/13/content_429808.htm?node=115" title="乘客公车上称携“炸弹”警车出动 ">乘客公车上称携“炸弹”警车出动 </a><span class="cGray">07:40</span></li>
+        <li><a href="javascript:if(confirm('http://www.zoomla.cn/content/2010-06/13/content_429550.htm?node=115  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.zoomla.cn/content/2010-06/13/content_429550.htm?node=115'" tppabs="http://www.zoomla.cn/content/2010-06/13/content_429550.htm?node=115" title="拖欠公租房租金可从工资中划扣 ">拖欠公租房租金可从工资中划扣</a><span class="cGray">06:39</span></li>
+        <li><a href="javascript:if(confirm('http://www.zoomla.cn/content/2010-06/13/content_429549.htm?node=115  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.zoomla.cn/content/2010-06/13/content_429549.htm?node=115'" tppabs="http://www.zoomla.cn/content/2010-06/13/content_429549.htm?node=115" title="曹操墓遭报复性毁坏 ">曹操墓遭报复性毁坏 </a><span class="cGray">06:41</span></li>
+        <li><a href="javascript:if(confirm('http://www.zoomla.cn/content/2010-06/13/content_429566.htm?node=115  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.zoomla.cn/content/2010-06/13/content_429566.htm?node=115'" tppabs="http://www.zoomla.cn/content/2010-06/13/content_429566.htm?node=115" title="高陵布局：“前朝后寢”式">高陵布局：“前朝后寢”式</a><span class="cGray">06:54</span></li>
+        <li><a href="javascript:if(confirm('http://www.zoomla.cn/content/2010-06/13/content_430653.htm?node=115  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.zoomla.cn/content/2010-06/13/content_430653.htm?node=115'" tppabs="http://www.zoomla.cn/content/2010-06/13/content_430653.htm?node=115" title="国家药监局副局长涉严重违纪被免职 ">国家药监局副局长涉严重违纪被免职</a><span class="cGray">12:55</span></li>
+        <li><a href="javascript:if(confirm('http://www.zoomla.cn/content/2010-06/13/content_430664.htm?node=394  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.zoomla.cn/content/2010-06/13/content_430664.htm?node=394'" tppabs="http://www.zoomla.cn/content/2010-06/13/content_430664.htm?node=394" title="预告：网闻联播顺延至下周一 ">预告：网闻联播顺延至下周一 </a><span class="cGray">13:19</span></li>
+      </ul>
+    </div>
+    
+
+	
+<script type="text/javascript" charset='gb2312' src="js/passport_engine_v2.js" tppabs="139/js/passport_engine_v2.js"></script>
+<script type="text/javascript" charset='gb2312' src="js/jquery-1.3.2.js" tppabs="139/js/jquery-1.3.2.js"></script>
+<script type="text/javascript" charset='gb2312'src="js/index_v0.1_min.js" tppabs="139/js/index_v0.1_min.js"></script>
+
+
+
+<BR><BR><BR>
+<div>提示：点击右侧的上下标可以自由动滚动新闻</div>
+
+</body>
+</html>

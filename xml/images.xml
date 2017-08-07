@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root imageWidth='680' imageHeight='350' _imageHeight='345'>
+<menu url="#" frame="_parent" imageUrl="/public/banner/xml_images/01.jpg"/>
+<menu url="#" frame="_parent" imageUrl="/public/banner/xml_images/02.jpg"/>
+<menu url="#" frame="_parent" imageUrl="/public/banner/xml_images/03.jpg"/>
+<menu url="#" frame="_parent" imageUrl="/public/banner/xml_images/04.jpg"/>
+<menu url="#" frame="_parent" imageUrl="/public/banner/xml_images/05.jpg"/>
+<menu url="#" frame="_parent" imageUrl="/public/banner/xml_images/06.jpg"/>
+<menu url="#" frame="_parent" imageUrl="/public/banner/xml_images/07.jpg"/>
+</root>

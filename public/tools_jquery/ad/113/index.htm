@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="JS代码,全屏广告,JS广告代码,JS特效代码" />
+<meta name="description" content="此代码内容为雅虎中国首页全屏可伸缩可关闭广告代码，属于站长常用代码。" />
+<title>雅虎中国首页全屏可伸缩可关闭广告代码</title>
+</head>
+
+<body style="text-align:center">
+<table width="950" height="120" border="0" cellpadding="0" cellspacing="0" bgcolor="#66CCFF">
+  <tr>
+    <td align="center">头部</td>
+  </tr>
+</table>
+<!--start:{yhpsnspush-->
+<DIV id=yhp-snspush style="MARGIN: 0px; OVERFLOW: hidden; WIDTH: 950px; POSITION: relative; HEIGHT: 290px">
+<DIV id=close-snspush style="RIGHT: 5px; CURSOR: hand; POSITION: absolute; TOP: 5px"><IMG alt=关闭 src="images/snspush_close.gif" tppabs="113/images/snspush_close.gif"></DIV>
+<SCRIPT src="js/ycn_fla.js" tppabs="113/js/ycn_fla.js"></SCRIPT>
+<SCRIPT>
+ <!--
+ if(yfla.is_support(6)){
+ yfla.load({id:"myfla",
+ url:"swf/950x290_koubei_1.swf"/*tpa=http://ad.zoomla.cn/ad/113/swf/950x290_koubei_1.swf*/,
+ width:950,
+ height:290});
+ }else{
+ //不支持Flash情况下，可以在这里做任何处理(替带或是跳转)。
+ document.write("没有安装Flash Player或版本不够新");
+ }
+ document.getElementById('close-snspush').onclick = function(){
+ YAHOO.CN.Fp.closeSnsPush();
+ }
+ //-->
+</SCRIPT>
+</DIV><!--yhpsnspush}:end-->
+<table width="950" height="120" border="0" cellpadding="0" cellspacing="0" bgcolor="#66CCFF">
+  <tr>
+    <td align="center">底部</td>
+  </tr>
+</table>
+<SCRIPT src="js/ycnlib.js" tppabs="113/js/ycnlib.js"></SCRIPT>
+<SCRIPT src="js/animation-min.js" tppabs="113/js/animation-min.js"></SCRIPT>
+<SCRIPT>
+YAHOO.namespace("http://ad.zoomla.cn/ad/113/CN.Fp");
+</SCRIPT>
+
+
+<SCRIPT>
+<!--
+YAHOO.CN.Fp.closeSnsPush = function(){
+ var removeElement = function() {
+ var el = this.getEl();
+ el.parentNode.removeChild(el);
+ };
+ var myAnim = new YAHOO.util.Anim('yhp-snspush', {
+ height: { to: 0 }
+ }, 0.5, YAHOO.util.Easing.easeOut);
+ myAnim.onComplete.subscribe(removeElement);
+ myAnim.animate();
+}
+//-->
+</SCRIPT>
+<p>来源：<a href="javascript:if(confirm('http://1th.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://1th.cn/'" tppabs="http://1th.cn/" target="_blank">一特站长站</a></p>
+
+</body>
+</html>
+<div style="display:none"> <script src="../../../s6.cnzz.com/stat.php-id=44148&web_id=44148&show=pic" tppabs="http://s6.cnzz.com/stat.php?id=44148&web_id=44148&show=pic" language='JavaScript' charset='gb2312'></script></div>

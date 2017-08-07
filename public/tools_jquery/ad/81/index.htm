@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="Copyright" content="中国建站之家 http://www.1th.cn/" />
+<meta name="description" content="提供专业的网站建设教程、源代码、网页模板、网页素材下载以及网页设计学习！" />
+<meta content="四屏flash图片轮换代码js广告代码" name="keywords" />
+<title>四屏flash图片轮换代码js广告代码</title>
+</head>
+
+<body>
+
+<script language="JavaScript" src="js/flash.js" tppabs="81/js/flash.js" type="text/javascript"></script>
+<div id="flash" align="center"></div>
+<script language="JavaScript" type="text/javascript">
+<!--//--><![CDATA[//><!--
+//注意：此flash焦点图必须保证图片数量为 4 幅，不可多不可少！
+var pics="images/01.jpg|images/02.jpg|images/03.jpg|images/04.jpg";	
+var mylinks="http://www.1th.cn/|http://www.1th.cn/|http://www.1th.cn/|http://www.1th.cn/";
+var texts="标题一|标题二|标题三|标题四";
+var Flash = new Flash("flash/flash.swf"/*tpa=http://ad.zoomla.cn/ad/81/flash/flash.swf*/,"Flash","240","230","5","#ffffff");
+Flash.addParam("quality", "high");
+Flash.addParam("salign", "t");
+Flash.addVariable("p",pics);
+Flash.addVariable("l",mylinks);
+Flash.addVariable("icon",texts);
+Flash.write("flash");
+//--><!]]>
+</script>
+
+</BODY></HTML>
+

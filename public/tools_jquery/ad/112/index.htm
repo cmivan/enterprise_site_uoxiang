@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>可单独关闭的两边浮动代码</title>
+<LINK rev=stylesheet media=all href="css/css.css" tppabs="112/css/css.css" type=text/css rel=stylesheet>
+</head>
+<body>
+<div align="center"><br /><br />
+  代码整理：<a href="javascript:if(confirm('http://www.1th.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.1th.cn/'" tppabs="http://www.1th.cn/" target="_blank">一特站长站</a>　 </p>
+
+</div>
+
+
+<SCRIPT language="JavaScript">
+lastScrollY = 0;
+function heartBeat(){
+var diffY;
+if (document.documentElement && document.documentElement.scrollTop)
+diffY = document.documentElement.scrollTop;
+else if (document.body)
+diffY = document.body.scrollTop
+else
+{/*Netscape stuff*/}
+//alert(diffY);
+percent=.1*(diffY-lastScrollY);
+if(percent>0)percent=Math.ceil(percent);
+else percent=Math.floor(percent);
+document.getElementById("leftDiv").style.top = parseInt(document.getElementById("leftDiv").style.top)+percent+"px";
+document.getElementById("rightDiv").style.top = parseInt(document.getElementById("rightDiv").style.top)+percent+"px";
+lastScrollY=lastScrollY+percent;
+//alert(lastScrollY);
+}
+//下面这段删除后，对联将不跟随屏幕而移动。
+window.setInterval("heartBeat()",1);
+//-->
+//关闭按钮
+function close_left1(){
+    left1.style.visibility='hidden';
+}
+function close_left2(){
+    left2.style.visibility='hidden';
+}
+function close_right1(){
+    right1.style.visibility='hidden';
+}
+function close_right2(){
+    right2.style.visibility='hidden';
+}
+//显示样式
+document.writeln("<style type=\"text\/css\">");
+document.writeln("#leftDiv,#rightDiv{width:100px;height:100px;background-color:#fff;position:absolute;}");
+document.writeln(".itemFloat{width:100px;height:auto;line-height:5px}");
+document.writeln("<\/style>");
+//以下为主要内容
+document.writeln("<div id=\"leftDiv\" style=\"top:40px;left:5px\">");
+//------左侧各块开始
+//---L1
+document.writeln("<div id=\"left1\" class=\"itemFloat\">");
+document.writeln("<embed src=flash/100x300-left.swf width=100 height=300></embed>");
+document.writeln("<br><a href=\"javascript:close_left1();\" title=\"关闭上面的广告\">×<\/a><br><br><br><br>");
+document.writeln("<\/div>");
+//---L2
+document.writeln("<div id=\"left2\" class=\"itemFloat\">");
+document.writeln("<a target=_blank href=http://www.1th.cn/><img border=0 src=images/100x100-left.gif></a>");
+document.writeln("<br><a href=\"javascript:close_left2();\" title=\"关闭上面的广告\">×<\/a>");
+document.writeln("<\/div>");
+//------左侧各块结束
+document.writeln("<\/div>");
+document.writeln("<div id=\"rightDiv\" style=\"top:40px;right:5px\">");
+//------右侧各块结束
+//---R1
+document.writeln("<div id=\"right1\" class=\"itemFloat\">");
+document.writeln("<embed src=flash/100x300-right.swf width=100 height=300></embed>");
+document.writeln("<br><a href=\"javascript:close_right1();\" title=\"关闭上面的广告\">×<\/a><br><br><br><br>");
+document.writeln("<\/div>");
+//---R2
+document.writeln("<div id=\"right2\" class=\"itemFloat\">");
+document.writeln("<a target=_blank href=http://www.1th.cn/><img border=0 src=images/100x100-right.gif></a>");
+document.writeln("<br><a href=\"javascript:close_right2();\" title=\"关闭上面的广告\">×<\/a>");
+document.writeln("<\/div>");
+//------右侧各块结束
+document.writeln("<\/div>");
+</SCRIPT>
+
+<div style="display:none"> <script src="../../../s6.cnzz.com/stat.php-id=44148&web_id=44148&show=pic" tppabs="http://s6.cnzz.com/stat.php?id=44148&web_id=44148&show=pic" language='JavaScript' charset='gb2312'></script></div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html public "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="gb2312"> 
+<head> 
+<title> 代码实例：滑动展开/收缩广告 </title> 
+<meta http-equiv="content-type" content="text/html; charset=gb2312" /> 
+<meta name="author" content="jz123cn@126.com"> 
+<meta name="keywords" content="代码实例：滑动展开/收缩广告" /> 
+<script type="text/javascript"> 
+var intervalId = null; 
+function slideAd(id,nStayTime,sState,nMaxHth,nMinHth){ 
+  this.stayTime=nStayTime*1000 || 3000; 
+  this.maxHeigth=nMaxHth || 90; 
+  this.minHeigth=nMinHth || 1; 
+  this.state=sState || "down" ; 
+  var obj = document.getElementById(id); 
+  if(intervalId != null)window.clearInterval(intervalId); 
+  function openBox(){ 
+   var h = obj.offsetHeight; 
+   obj.style.height = ((this.state == "down") ? (h + 2) : (h - 2))+"px"; 
+    if(obj.offsetHeight>this.maxHeigth){ 
+    window.clearInterval(intervalId); 
+    intervalId=window.setInterval(closeBox,this.stayTime); 
+    } 
+    if (obj.offsetHeight<this.minHeigth){ 
+    window.clearInterval(intervalId); 
+    obj.style.display="none"; 
+    } 
+  } 
+  function closeBox(){ 
+   slideAd(id,this.stayTime,"up",nMaxHth,nMinHth); 
+  } 
+  intervalId = window.setInterval(openBox,10); 
+} 
+</script> 
+</head> 
+<body style="margin:0;padding:0;font-size:14px;"> 
+<div id="MyMoveAd" style="background:#ff0;height:12px;overflow:hidden;"> 
+<ul> 
+ <li>觉得不错请收藏本页面</li> 
+ <li>觉得不错请收藏本页面</li> 
+ <li>觉得不错请收藏本页面</li> 
+ <li>觉得不错请收藏本页面</li> 
+ <li>觉得不错请收藏本页面</li> 
+ <li>觉得不错请收藏本页面</li> 
+ <li>觉得不错请收藏本页面</li> 
+ <li>觉得不错请收藏本页面</li> 
+ <li>觉得不错请收藏本页面</li> 
+ <li>觉得不错请收藏本页面</li> 
+ <li>觉得不错请收藏本页面</li> 
+ <li>觉得不错请收藏本页面</li> 
+ <li>觉得不错请收藏本页面</li> 
+ <li>觉得不错请收藏本页面</li> 
+ <li>觉得不错请收藏本页面</li> 
+</ul> 
+</div> 
+<p>代码实例：<strong>滑动展开/收缩广告</strong>&nbsp;&nbsp;&nbsp;请刷新页面，再次观看演示效果</p> 
+<script type="text/javascript"> 
+ <!-- 
+ slideAd('MyMoveAd',2); 
+--> 
+</script> 
+</body> 
+</html> 

@@ -1,0 +1,92 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>大幅自动轮换代码</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #000033;
+}
+-->
+</style></head>
+
+<body>
+<table width="728"  border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="989"><div id=icefable1>
+        <table width="728"  border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="728" height="60" bgcolor="#0099CC">1</td>
+          </tr>
+          <tr>
+            <td height="60" bgcolor="#00FFCC">2</td>
+          </tr>
+          <tr>
+            <td height="60" bgcolor="#99FF00">3</td>
+          </tr>
+          <tr>
+            <td height="60" bgcolor="#00CCFF">4</td>
+          </tr>
+          <tr>
+            <td height="60" bgcolor="#FF9900">5</td>
+          </tr>
+          <tr>
+            <td height="60" bgcolor="#FFFF33">6</td>
+          </tr>
+        </table>
+        <script>
+marqueesHeight=60;
+stopscroll=false;
+with(icefable1){
+	  style.width=0;
+	  style.height=marqueesHeight;
+	  style.overflowX="visible";
+	  style.overflowY="hidden";
+	  noWrap=true;
+	  onmouseover=new Function("stopscroll=true");
+	  onmouseout=new Function("stopscroll=false");
+  }
+  preTop=0; currentTop=marqueesHeight; stoptime=0;
+  icefable1.innerHTML+=icefable1.innerHTML;
+  
+
+function init_srolltext(){
+  icefable1.scrollTop=0;
+  setInterval("scrollUp()",1);
+}init_srolltext();
+
+function scrollUp(){
+  if(stopscroll==true) return;
+  currentTop+=1;
+  if(currentTop==marqueesHeight+1)
+  {
+  	stoptime+=1;
+  	currentTop-=1;
+  	if(stoptime==300) 
+  	{
+  		currentTop=0;
+  		stoptime=0;  		
+  	}
+  }
+  else {  	
+	  preTop=icefable1.scrollTop;
+	  icefable1.scrollTop+=1;
+	  if(preTop==icefable1.scrollTop){
+	    icefable1.scrollTop=marqueesHeight;
+	    icefable1.scrollTop+=1;
+	    
+	  }
+  }
+
+}
+init_srolltext();
+    </script>
+    </div>
+	</td>
+  </tr>
+  <tr>
+    <td height="145" bgcolor="#0066FF">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

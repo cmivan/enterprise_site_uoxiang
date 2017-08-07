@@ -1,0 +1,260 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="css/css.css" tppabs="03/css/css.css" rel="stylesheet" type="text/css">
+<title>大幅广告自动翻滚代码</title>
+</head>
+<body onload=iniautoslide()>
+<div id=sudsclickstreamdiv 
+style="Z-INDEX: 1; LEFT: 100px; VISIBILITY: visible; WIDTH: 80px; POSITION: absolute; TOP: -300px"></div>
+<table width=750 align="center" cellpadding=0 cellspacing=0>
+  <tbody>
+    <tr>
+      <td 
+    style="BORDER-RIGHT: #cccccc 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 0px; PADDING-BOTTOM: 5px; BORDER-LEFT: #cccccc 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: medium none" 
+    width=750 bgcolor=#e6e6e6>
+        <div style="WIDTH: 0px; POSITION: relative; HEIGHT: 0px">
+          <div style="Z-INDEX: 10; LEFT: 748px; POSITION: absolute; TOP: -6px">
+            <table cellspacing=0 cellpadding=0 width=30>
+              <tbody>
+                <tr>
+                  <td width=30 height=4><img height=4 alt="" 
+            src="images/digi_gb_lp_008.gif" tppabs="03/images/digi_gb_lp_008.gif" width=30></td>
+                </tr>
+                <tr>
+                  <td background="images/digi_gb_lp_009.gif" tppabs="03/images/digi_gb_lp_009.gif" height=207>
+                    <table cellspacing=0>
+                      <tbody>
+                        <tr>
+                          <td style="PADDING-LEFT: 1px" width=24 height=29><img id=upbtn 
+                  style="CURSOR: pointer" onfocus=this.blur() 
+                  onClick=slideup();clearInterval(interval01); height=28 alt=UP 
+                  src="images/scrollad_1.gif" tppabs="03/images/scrollad_1.gif" width=24></td>
+                        </tr>
+                        <tr>
+                          <td height=2></td>
+                        </tr>
+                        <tr>
+                          <td class=NUM2 id=led1 height=19>1</td>
+                        </tr>
+                        <tr>
+                          <td height=2></td>
+                        </tr>
+                        <tr>
+                          <td class=NUM1 id=led2 height=19>2</td>
+                        </tr>
+                        <tr>
+                          <td height=2></td>
+                        </tr>
+                        <tr>
+                          <td class=NUM1 id=led3 height=19>3</td>
+                        </tr>
+                        <tr>
+                          <td height=3></td>
+                        </tr>
+                        <tr>
+                          <td style="PADDING-LEFT: 1px" height=29><img id=downbtn 
+                  style="CURSOR: pointer" onfocus=this.blur() 
+                  onClick=slidedown();clearInterval(interval01); height=29 
+                  alt=DOWN src="images/scrollad_4.gif" tppabs="03/images/scrollad_4.gif" 
+                width=24></td>
+                        </tr>
+                      </tbody>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td height=6><img height=6 alt="" 
+            src="images/digi_gb_lp_010.gif" tppabs="03/images/digi_gb_lp_010.gif" 
+      width=30></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id=main onMouseOver=clearInterval(interval01); 
+      style="OVERFLOW: hidden; WIDTH: 748px; POSITION: relative; HEIGHT: 237px" 
+      onMouseOut=iniautoslide(); nowrap>
+          <div id=f1 
+      style="Z-INDEX: 10; LEFT: 0px; WIDTH: 748px; POSITION: absolute; TOP: 0px; HEIGHT: 237px">
+            <iframe 
+      name=frame1 marginwidth=0 marginheight=0 src="01.htm" tppabs="03/01.htm" 
+      frameborder=0 noresize width=750 scrolling=no onload=checkdamie(1) 
+      height=250></iframe>
+          </div>
+          <div id=f2 
+      style="DISPLAY: none; Z-INDEX: 10; LEFT: 0px; WIDTH: 748px; POSITION: absolute; TOP: 237px; HEIGHT: 237px">
+            <iframe 
+      name=frame1 marginwidth=0 marginheight=0 src="02.htm" tppabs="03/02.htm" 
+      frameborder=0 noresize width=750 scrolling=no onload=checkdamie(2) 
+      height=250></iframe>
+          </div>
+          <div id=f3 
+      style="DISPLAY: none; Z-INDEX: 10; LEFT: 0px; WIDTH: 748px; POSITION: absolute; TOP: 474px; HEIGHT: 237px">
+            <iframe 
+      name=frame1 marginwidth=0 marginheight=0 src="03.htm" tppabs="03/03.htm" 
+      frameborder=0 noresize width=750 scrolling=no onload=checkdamie(3) 
+      height=250></iframe>
+          </div>
+        </div>
+</table>
+<SCRIPT language=JavaScript>
+<!--
+var currentF=1;
+document.getElementById("upbtn").style.display="none";
+var mainobj = document.getElementById("main");
+var frameheight = 237;
+var scrolling=0;
+var speed = 20;
+var checkloaded=new Array();
+for(i=1;i<=3;i++){
+checkloaded[i]=0;
+}
+function checkdamie(n){
+	checkloaded[n]=1;
+	//alert(checkloaded[n])
+
+}
+function alertloading(sdirection){
+scrolling=0;
+if(sdirection == "down"){
+currentF--;
+}
+else{
+currentF++;
+}
+//alert("正在下载数据,请稍等");
+}
+
+function scrolldown(f){
+
+	switch (f){
+	case 2:
+	if (mainobj.scrollTop>=frameheight){
+		clearInterval(inter);
+		mainobj.scrollTop=frameheight;
+		scrolling=0;
+		}
+	else{mainobj.scrollTop+=speed;}
+	break;
+	case 3:
+	if (mainobj.scrollTop>=frameheight*2){
+		mainobj.scrollTop=frameheight*2;
+		clearInterval(inter);
+		scrolling=0;
+		}
+	else{mainobj.scrollTop+=speed;}
+	break;
+	}
+}
+
+
+function scrollup(f){
+
+	switch (f){
+	case 1:
+	if (mainobj.scrollTop<=0){
+		clearInterval(inter1);
+		mainobj.scrollTop=0;
+		scrolling=0;
+		}
+	else{
+	mainobj.scrollTop-=speed;
+	}
+	break; 
+	case 2:
+	if (mainobj.scrollTop<=frameheight){
+		mainobj.scrollTop=frameheight;
+		clearInterval(inter1);
+		scrolling=0;
+		}
+	else{
+	mainobj.scrollTop-=speed;
+	}
+	break; 
+	}
+
+}
+
+function slidedown(){
+	//slide
+if (scrolling==0){
+	scrolling=1;
+	currentF++;
+	obj=eval("document.getElementById('f"+currentF+"')");
+	obj.style.display="block";
+	if (checkloaded[currentF]==1){
+		inter=eval("setInterval('scrolldown("+currentF+")',5)");
+		//led
+		document.getElementById("upbtn").style.display="";
+		if (currentF==3){
+		document.getElementById("downbtn").style.display="none";
+		}
+		for (i=1;i<=3;i++){
+		eval("document.getElementById('led"+i+"').className='NUM1'");
+		}
+		eval("document.getElementById('led"+currentF+"').className='NUM2'");
+	}
+	else{
+	//alert(checkloaded[currentF]);
+	alertloading("down");
+	
+	}
+	}
+}
+
+
+function slideup(){
+	//slide
+if (scrolling==0){
+	scrolling=1;
+	currentF--;
+	obj=eval("document.getElementById('f"+currentF+"')");
+	obj.style.display="block";
+		if (checkloaded[currentF]==1){
+		inter1=eval("setInterval('scrollup("+currentF+")',5)");
+		//led
+		document.getElementById("downbtn").style.display="";
+		if (currentF==1){
+		document.getElementById("upbtn").style.display="none";
+		}
+		for (i=1;i<=3;i++){
+		eval("document.getElementById('led"+i+"').className='NUM1'");
+		}
+		eval("document.getElementById('led"+currentF+"').className='NUM2'");
+		}
+		else{
+		alertloading("up");
+		}
+	}
+}
+//auto slide
+var direction = "down";
+var interval01;
+var autotime = 3000;
+function autoslide(){
+	if(direction == "down"){
+		if (currentF == 2){
+		 direction = "up";
+		}
+	slidedown();
+	//alert(direction);
+	}
+	if(direction == "up"){
+		if (currentF == 2){
+		 direction = "down";
+		}
+	slideup();
+	//alert(direction);
+	}
+	
+}
+function iniautoslide(){
+interval01 = setInterval("autoslide()",autotime);
+}
+
+//-->
+</SCRIPT>
+</body>
+</html>

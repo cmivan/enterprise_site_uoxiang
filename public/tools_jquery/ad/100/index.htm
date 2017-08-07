@@ -1,0 +1,146 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="description" content="JS4屏焦点图轮换代码！" />
+<meta content="JS4屏焦点图轮换代码" name="keywords" />
+<title>JS4屏焦点图轮换代码</title>
+</head>
+<style type="text/css">
+*{margin:3;padding:0;font-size:13px;}
+body{
+	font-size:12px;
+	color:#333333;
+	text-align:center;
+	font-family:'宋体',arial,verdana,sans-serif;
+	margin-top: 8px;
+}
+body *{text-align:center;}
+.font14{font-size:14px;}
+select{font-family: Times New Roman,arial,verdana,sans-serif;}
+table{	border-collapse:collapse;}
+img{border:0;}
+ul{list-style-type:none;}
+.clear{clear: both;height:0;line-height:0px;font-size:14px;}
+.center{text-align:center;}
+.mleft0{margin-left:0px !important;}
+.mtop0{margin-top:0px !important;}
+.strong{font-weight: bold;}
+.sb{color:#009A91;font-weight: bold;}
+/*头部*/
+#i_photo_index{width:258px;height:256px;text-align:center;}
+#i_photo_index a.i_photo_a{height:180px;text-align:center;margin-left:8px;}
+#i_photo_index a.i_photo_a img{margin-top:10px;}
+#i_photo_index h1{margin-top:0 !important;margin-top:4px;margin-top /**/:2px;height:28px;line-height:28px;text-align:center;}
+#i_photo_index h1 a{font-size:18px;font-weight:normal;font-family:"黑体",arial,verdana,sans-serif;}
+#i_photo_index p{width:96%;margin:0 2%;line-height:20px;text-align:left;text-indent:2em;}
+#i_photo_index p span{margin-right:30px !important;margin-right /**/:0px;}
+a:link {
+	color: #333333;
+	text-decoration: none;
+}
+a:visited {
+	color: #333333;
+	text-decoration: none;
+}
+a:hover {
+	color: #FF6600;
+	text-decoration: underline;
+}
+</style>
+<style type="text/css">
+#i_photo img{margin-left:0px;}
+.i_link2 a{float:center;margin:2px;padding:2px 0;display:blcok;height:22px;line-height:22px;}
+#index_page{float:right;display:block;height:16px;padding:1px 0;margin-right:4px;}
+#index_page *{float:left;display:inline;line-height:16px;border:1px solid #B6CFCD;text-align:center;padding:0;margin:0 2px;}
+#index_page strong{background:#009A91;color:#fff;width:16px;}
+#index_page span{color:#009a91;padding:3px 0 0 0;border:0;cursor:pointer;}
+#index_page a{width:16px;color:#009A91;text-decoration:none;}
+body,td,th {
+	font-size: 12px;
+}
+a {
+	font-size: 16px;
+}
+a:active {
+	text-decoration: none;
+}
+</style>
+<link href="css/css.css" tppabs="100/css/css.css" rel="stylesheet" type="text/css">
+<body>
+<table width="200" border="0" align="center" cellpadding="0" cellspacing="0" class="jdt">
+  <tr>
+    <td><script language="javascript" type="text/javascript">
+//<![CDATA[
+var _t1 = 0; //打开页面时等待图片载入的时间，单位为秒，可以设置为0
+var _t2 = 5; //图片轮转的间隔时间
+var _tnum = 4; //焦点图个数
+var _tn = 1;//当前焦点
+var _tl =null;
+_tt1 = setTimeout('change_img()',_t1*1000);
+function change_img(){
+setFocus(_tn);
+_tt1 = setTimeout('change_img()',_t2*1000);
+}
+function setFocus(i){
+if(i>_tnum){_tn=1;i=1;}
+_tl?document.getElementById('focusPic'+_tl).style.display='none':'';
+document.getElementById('focusPic'+i).style.display='block';
+_tl=i;
+_tn++;
+}
+//]]>
+</script>
+<!--焦点图1开始 标题13字 说明30个字-->
+<div id="focusPic1">
+<a href="javascript:if(confirm('http://www.1th.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.1th.cn/'" tppabs="http://www.1th.cn/" class="i_photo_a" target="_blank">
+<img src="images/01.jpg" tppabs="100/images/01.jpg" alt="这里是您的标题一文字内容" /></a>
+<h1><a href="javascript:if(confirm('http://www.1th.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.1th.cn/'" tppabs="http://www.1th.cn/" target="_blank">这里是您的标题一文字内容</a></h1>
+<div id="index_page"><span onClick="javascript:setFocus(2);">点击切换焦点图→</span>
+<strong>1</strong>
+<a href="javascript:setFocus(2);">2</a>
+<a href="javascript:setFocus(3);">3</a>
+<a href="javascript:setFocus(4);">4</a>
+</div></div>
+<!--焦点图1结束-->
+<!--焦点图2开始  标题13字 说明30个字-->
+<div id="focusPic2" style="display:none;">
+<a href="javascript:if(confirm('http://www.1th.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.1th.cn/'" tppabs="http://www.1th.cn/" class="i_photo_a" target="_blank">
+<img src="images/02.jpg" tppabs="100/images/02.jpg" alt="这里是您的标题二文字内容" /></a>
+<h1><a href="javascript:if(confirm('http://www.1th.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.1th.cn/'" tppabs="http://www.1th.cn/" target="_blank">这里是您的标题二文字内容</a></h1>
+<div id="index_page"><span onClick="javascript:setFocus(3);">点击切换焦点图→</span>
+<a href="javascript:setFocus(1);">1</a>
+<strong>2</strong>
+<a href="javascript:setFocus(3);">3</a>
+<a href="javascript:setFocus(4);">4</a>
+</div></div>
+<!--焦点图2结束-->
+<!--焦点图3开始  标题13字 说明30个字-->
+<div id="focusPic3" style="display:none;">
+<a href="javascript:if(confirm('http://www.1th.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.1th.cn/'" tppabs="http://www.1th.cn/" class="i_photo_a" target="_blank">
+<img src="images/03.jpg" tppabs="100/images/03.jpg" alt="这里是您的标题三文字内容" /></a>
+<h1><a href="javascript:if(confirm('http://www.1th.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.1th.cn/'" tppabs="http://www.1th.cn/" target="_blank">这里是您的标题三文字内容</a></h1>
+<div id="index_page"><span onClick="javascript:setFocus(4);">点击切换焦点图→</span>
+<a href="javascript:setFocus(1);">1</a>
+<a href="javascript:setFocus(2);">2</a>
+<strong>3</strong>
+<a href="javascript:setFocus(4);">4</a>
+</div></div>
+<!--焦点图3结束-->
+<!--焦点图4开始  标题13字 说明30个字-->
+<div id="focusPic4" style="display:none;">
+<a href="javascript:if(confirm('http://www.1th.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.1th.cn/'" tppabs="http://www.1th.cn/" class="i_photo_a" target="_blank">
+<img src="images/04.jpg" tppabs="100/images/04.jpg" alt="这里是您的标题四文字内容 " /></a>
+<h1><a href="javascript:if(confirm('http://www.1th.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.1th.cn/'" tppabs="http://www.1th.cn/" target="_blank">这里是您的标题四文字内容</a></h1>
+<div id="index_page"><span onClick="javascript:setFocus(1);">点击切换焦点图→</span>
+<a href="javascript:setFocus(1);">1</a>
+<a href="javascript:setFocus(2);">2</a>
+<a href="javascript:setFocus(3);">3</a>
+<strong>4</strong>
+</div></div>
+<!--焦点图4结束--> </td>
+  </tr>
+</table>
+<br><br>
+更多请访问：<a href="javascript:if(confirm('http://www.1th.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.1th.cn/'" tppabs="http://www.1th.cn/"  target="_blank">一特站长站</a>
+</body>
+</html>

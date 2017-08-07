@@ -1,0 +1,68 @@
+body{padding: 0;font-family:'宋体';}
+.mainWidth{
+	width: 700px; margin: 0 auto;padding: 20px;border-left: 1px solid #ccc;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;
+}
+
+/*套餐的*/
+#page{
+	margin-bottom:13px;
+}
+#page .left{
+	width:100%;
+	float:left;
+	margin-bottom:-2px;
+	z-index:999;
+	position:relative;
+}
+#page .left div{
+	width:680px;
+	overflow:hidden;
+	color:#666;
+	border:0;
+	float: left;
+	padding: 15px;
+	padding-bottom:18px;
+	color:#333;
+	background-image:url(../images/page_case_tab.gif);
+	background-position:left bottom;
+	background-repeat:no-repeat;
+}
+#page .right{
+	overflow:hidden;
+	border:0;
+	z-index:1;
+	background:none;
+}
+#page .right .content{
+	margin:0;
+	}
+#page .right img{width: 100%;}
+#page .right .content-text{
+	padding:0;
+	}
+#page .right li{
+	text-align:center;
+	width:231px;
+	float:left;
+	list-style-type: none;
+	margin: 12px;
+	margin-bottom: 0px;
+	margin-right: 0px;
+	overflow: hidden;
+}
+#page .right li div.title{
+	line-height:28px;
+	height:28px;
+	clear:both;
+}
+#page .right li img{
+	width:229px;
+	height:150px;
+}
+#page .right li div.pic a{
+	float:left;
+	border:#ddd 1px solid;
+}
+#page .right li div.pic a:hover{
+	border:#999 1px solid;
+}

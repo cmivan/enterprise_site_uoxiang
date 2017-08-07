@@ -1,0 +1,11 @@
+
+var yfla={control:function()
+{var oF=navigator.plugins["Shockwave Flash"]||new ActiveXObject("ShockwaveFlash.ShockwaveFlash");return(oF)?1:0;},version:function()
+{var oF;var v=null;if(navigator.plugins&&navigator.mimeTypes.length)
+{oF=navigator.plugins["Shockwave Flash"];if(oF&&oF.description)
+{v=oF.description.replace(/([a-z]|[A-Z]|\s)+/,"").replace(/(\s+r|\s+b[0-9]+)/,".").split(".")[0];}}
+else if(window.ActiveXObject)
+{var vb='<scr'+'ipt language=vbscript type=text/vbscript\> \n';vb+='Function VBGetSwfVer(i) \n';vb+='on error resume next \n';vb+='Dim swControl, swVersion \n';vb+='swVersion = 0 \n';vb+='set swControl = CreateObject("ShockwaveFlash.ShockwaveFlash." + CStr(i)) \n';vb+='if (IsObject(swControl)) then \n';vb+='swVersion = swControl.GetVariable("$version") \n';vb+='end if \n';vb+='VBGetSwfVer = swVersion \n';vb+='End Function \n';vb+='<\/scr'+'ipt\>';document.write(vb);for(i=25;i>0;i--)v=VBGetSwfVer(i);if(v!=0&&v!=null)v=v.split(",")[0].split(" ")[1];}
+return parseInt(v);},is_support:function(ver){if(isNaN(yfla.version())||(yfla.version()<ver))
+{return false;}
+return true;},load:function(fla){var flacid=(fla.cid)?fla.cid:"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000",flaid=(fla.id)?fla.id:"default_flash_name",flaver=(fla.version)?fla.version:"6,0,0,0",flawidth=(fla.width)?fla.width:0,flaheight=(fla.height)?fla.height:0,flasrc=(fla.url)?fla.url:false,flaloop=(fla.loop)?fla.loop:true,flamode=(fla.wmode)?fla.wmode:"opaque";var str='<object classid="'+flacid+'"'+' codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version='+flaver+'" '+' id="'+flaid+'" width="'+flawidth+'" height="'+flaheight+'">'+'<param name="movie" value="'+flasrc+'">'+'<param name="wmode" value="'+flamode+'">'+'<param name="loop" value="'+flaloop+'">'+'<param name="quality" value="high">'+'<embed name="'+flaid+'" src="'+flasrc+'" loop="'+flaloop+'" wmode="'+flamode+'" quality="high" '+' swLiveConnect="true" width="'+flawidth+'" height="'+flaheight+'"'+' type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">'+'</embed></object>';document.write(str);}};

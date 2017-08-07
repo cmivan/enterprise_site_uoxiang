@@ -1,0 +1,61 @@
+.mofine_center{
+	padding-top:10px;
+	padding-left:20px;
+	}
+.mofineconteng{
+	 BACKGROUND: url(nytop_23.jpg); WIDTH: 970px; PADDING-left: 7px;PADDING-right: 7px;HEIGHT: 775px
+}
+.mofinesiteconteng_5{
+	 WIDTH: 930px; FLOAT: center; PADDING-left: 0px;PADDING-right: 0px;
+}
+.mofineleft{
+	 WIDTH: 200px;HEIGHT: 500px; FLOAT: left; margin-right:10px;
+}
+
+.mofineleft_top{
+	 WIDTH: 190px;HEIGHT: 28px; FLOAT: left; BACKGROUND: url(top.gif) no-repeat left center; PADDING-left: 20px; margin-top: 10px;	
+}
+
+.mofineleft_top_1{
+	 WIDTH: 80px;HEIGHT: 25px; FLOAT: left; BACKGROUND: url(02titico.gif) no-repeat left center; PADDING-left: 25px; 
+}
+.mofineleft_seach_1{
+	 WIDTH: 80px;HEIGHT: 25px; FLOAT: left; BACKGROUND: url(07titico.gif) no-repeat left center; PADDING-left: 25px; 
+}
+.mofineleft_center{
+	WIDTH: 207px;
+	HEIGHT: auto;
+	FLOAT: left;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #E3E3E3;
+	border-left-color: #E3E3E3;
+}
+.mofineleft_bottom{
+	 WIDTH: 210px;HEIGHT: 6px; FLOAT: left; BACKGROUND: url(bottom.gif) no-repeat left center
+}
+.mofineright{
+	 WIDTH: 707px;HEIGHT: 500px; FLOAT: right; margin-left:0px;
+}
+.mofineright_top{
+	  WIDTH: 709px;HEIGHT: 28px; FLOAT: left; BACKGROUND: url(topr.gif) no-repeat left center;margin-top: 10px; 
+}
+.mofineright_top_1{
+	 WIDTH: 110px;HEIGHT: 25px; FLOAT: left; BACKGROUND: url(05titico.gif) no-repeat left center; margin-left: 25px; PADDING-left: 25px;
+}
+.mofineright_center{
+	WIDTH: 707px;
+	HEIGHT: auto;
+	FLOAT: left;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #E3E3E3;
+	border-left-color: #E3E3E3;
+}
+.mofineright_bottom{
+	 WIDTH: 709px;HEIGHT: 6px; FLOAT: left; BACKGROUND: url(bottomc.gif) no-repeat left center
+}

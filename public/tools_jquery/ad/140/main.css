@@ -1,0 +1,48 @@
+body	{margin:0px;font-size:12px;font-family:Tahoma, Verdana, Arial, Helvetica, sans-serif;}
+A{COLOR: #000;TEXT-DECORATION: none;}
+A:hover{COLOR:#FF3300;}
+.cleardiv{clear:both;margin:0px;padding:0px;font-size:0px;line-height:0px;visibility: hidden;height:0px;}
+ul,li{margin:0px;padding:0px;list-style-type:none;}
+h1,h2,h3,h4,h5,h6{margin:0px;padding:0px;}
+img,form{border:0px;}
+.mbody{width:1004px;margin:auto;}
+.mar5{margin-top:5px;}
+/*样式开始*/
+
+#i_user{margin:5px 0px 0px 0px;float:left;width:180px;height:250px;overflow:hidden;background:#F3F3F3;padding:10px;color:#525252}
+#i_user li{line-height:16px;padding-top:5px;}
+#i_best{float:right;width:475px;margin:5px 0px 0px 0px;height:270px;overflow:hidden;}
+#i_best li{height:27px;line-height:27px;font-size:14px;padding-left:5px;}
+#i_contents{width:340px;float:left;margin:10px 0px 0px 0px;}
+#i_contents h1,#i_case h1{font-size:14px;background:#F3F3F3;height:25px;line-height:25px;}
+.i_strs{padding:5px 0px;line-height:20px;}
+#i_case{width:340px;float:left;background:#F3F3F3;margin:10px 0px 0px 0px;}
+.cas_1{width:170px;float:left;text-align:center;}
+.cas_pic{width:135px;height:120px;background:#FFF;overflow:hidden;border:1px dashed #CACACA}
+.cas_tit{height:22px;line-height:22px;display:block;width:135px;overflow:hidden;}
+#i_rad{margin-top:555px;height:71px;background:url("../i/r_1.jpg"/*tpa=http://ad.zoomla.cn/ad/i/r_1.jpg*/) no-repeat center center;}
+#i_rweb{margin-top:5px;padding:10px;color:#fff;}
+#i_rweb h1{font-size:14px;height:30px;line-height:30px;}
+#i_rweb li{height:20px;line-height:20px;}
+#nextpage{height:22px;line-height:22px;text-align:center;background:#fff;margin:5px;padding-right:5px;}
+#i_copyright{height:49px;line-height:49px;background:#F3F3F3;text-align:center;}
+#Ajax_Out{background:#FFF;position:absolute;top:0px;left:0px;width:100%;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=70);z-index:0;}
+#Ajax_sInfo{position:absolute;z-index:1;width:894px;border:3px solid #C0D1EF;background:#fff;}
+#Ajax_sInfo h1{font-size:14px;height:26px;line-height:26px;background:url("images/jx_bg.gif"/*tpa=http://ad.zoomla.cn/ad/140/images/jx_bg.gif*/);}
+.aj_title{display:block;padding-left:5px;float:left;}
+.aj_clost{display:block;width:30px;height:100%;background:url("images/close.gif"/*tpa=http://ad.zoomla.cn/ad/140/images/close.gif*/) no-repeat center center;float:right;cursor:pointer;}
+.aj_pic{padding:5px;text-align:center;}
+
+
+.red_show a{ background:#F00; color:#FFF; font-size:14px; font-weight:bold; height:58px; line-height:58px; padding-left:20px; padding-right:20px;}
+
+
+
+
+
+
+
+
+
+
+

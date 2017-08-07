@@ -1,0 +1,17 @@
+BODY {	FONT-SIZE: 13px; COLOR: #333; POSITION: relative}
+A {	COLOR: #2e6ab1; TEXT-DECORATION: underline}
+A IMG {	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; TEXT-DECORATION: none; BORDER-BOTTOM-STYLE: none}
+#box6 {	WIDTH: 240px; POSITION: absolute}
+#box6 SPAN {	DISPLAY: block}
+#handles6_1 {	FLOAT: left}
+.mask6 {	LEFT: 60px; OVERFLOW: hidden; WIDTH: 240px; POSITION: absolute; HEIGHT: 180px}
+ HTML .mask6 {	LEFT: 5px}
+.thumbs {	WIDTH: 54px}
+.thumbs DIV {	DISPLAY: block; MARGIN: 0px 0px 4px; WIDTH: 54px; HEIGHT: 42px}
+.thumbs DIV IMG {	DISPLAY: block; WIDTH: 100%; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; HEIGHT: 100%; BORDER-BOTTOM-STYLE: none}
+.info {	BACKGROUND: #000; WIDTH: 100%; POSITION: absolute; HEIGHT: 25px}
+.info P {	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; PADDING-BOTTOM: 8px; COLOR: #fff; PADDING-TOP: 8px; FONT-FAMILY: Arial}
+.info H4 {	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; PADDING-BOTTOM: 8px; COLOR: #fff; PADDING-TOP: 8px; FONT-FAMILY: Arial}
+.info H4 {	FONT-SIZE: 12px}
+.info H4 A {	COLOR: #fff; TEXT-DECORATION: none}
+.clear {	CLEAR: both}

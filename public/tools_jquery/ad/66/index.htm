@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>像163网站顶部展出的大幅广告</title>
+   <script type="text/javascript" language="javascript">
+    var time = 500;
+    var h = 0;
+    function addCount()
+    {
+        if(time>0)
+        {
+            time--;
+            h = h+5;
+        }
+        else
+        {
+            return;
+        }
+        if(h>260)  //高度
+        {
+            return;
+        }
+        document.getElementById("ads").style.display = "";
+        document.getElementById("ads").style.height = h+"px";
+        setTimeout("addCount()",30); 
+    }
+    
+    window.onload = function showAds()
+    {
+        addCount();
+        setTimeout("noneAds()",4000); //停留时间自己适当调整
+    }
+    </script>
+    
+    <script type="text/javascript" language="javascript">
+    var T = 260;
+    var N = 260; //高度
+    function noneAds()
+    {
+        if(T>0)
+        {
+            T--;
+            N = N-5;
+        }
+        else
+        {
+            return;
+        }
+        if(N<0)
+        {
+            document.getElementById("ads").style.display = "none";
+            return;
+        }
+        
+        document.getElementById("ads").style.height = N+"px";
+        setTimeout("noneAds()",30); 
+    }
+    </script>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" /><style type="text/css">
+<!--
+body,td,th {
+    font-size: 12px;
+    color: #999999;
+line-height:20px}
+.STYLE1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FF0000;
+}
+.STYLE2 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #3333CC;
+}
+-->
+</style></head>
+<body>
+    <div id="ads" style="margin:auto; display:none; width:900px; top:0px; height:0px; border:solid 1px #000; background-color:#fafafa; overflow:hidden; text-align:center;">
+<td width="900" height="280"><a href="javascript:if(confirm('http://www.jz123.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.jz123.cn/'" tppabs="http://www.jz123.cn/"><img src="1.gif" tppabs="66/1.gif" border="0" alt="网站建设网页教程-中国建站之家"></a></td>
+    </div>
+    <div style="margin:auto; width:900px; height:200px; border:solid 1px #000; background-color:#fafafa; text-align:center;">
+        <div align="left"><br>
+          <span class="STYLE1">以下是网站主体内容</span><br>
+          <span class="STYLE2">一特源码站          </span><br>
+       一特站长站:网站建设类门户网。提供专业的网站建设教程、源代码下载、网页设计学习。网络组建，网站设计开发，网络赚钱，以及提供个人网站发展运营推广经验、网站源码下载，网页学习教程，网站开发和推广以及策划，服务器技术应用，企业网站推广解决方案。
+        </div>
+    </div>
+</body>
+</html>

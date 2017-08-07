@@ -1,0 +1,27 @@
+A IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+
+.undis {
+	DISPLAY: none
+}
+
+#focus_img {
+	BORDER-RIGHT: #dcdcdc 1px solid; BORDER-TOP: #dcdcdc 1px solid; BACKGROUND: url("today_topic.jpg"/*tpa=http://ad.zoomla.cn/ad/114/images/today_topic.jpg*/) no-repeat 5px 6px;  BORDER-LEFT: #dcdcdc 1px solid; WIDTH: 363px; MARGIN-RIGHT: 15px; BORDER-BOTTOM: #dcdcdc 1px solid; HEIGHT: 306px
+}
+#focus_warp {
+	DISPLAY: inline; FLOAT: right; MARGIN: 6px 6px 0px 0px
+}
+#au {
+	FILTER: progid:DXImageTransform.Microsoft.Fade ( duration=0.5,overlap=1.0 )
+}
+#au IMG {
+	FILTER: progid:DXImageTransform.Microsoft.Fade ( duration=0.5,overlap=1.0 ); HEIGHT: 225px
+}
+#simg IMG {
+	BORDER-RIGHT: #000 1px solid; BORDER-TOP: #000 1px solid; MARGIN-TOP: 7px; FILTER: Alpha(opacity=50); VERTICAL-ALIGN: 0px; BORDER-LEFT: #000 1px solid; CURSOR: pointer; BORDER-BOTTOM: #000 1px solid
+}
+#simg .s IMG {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 2px; MARGIN-TOP: 0px; PADDING-LEFT: 2px; BORDER-LEFT-WIDTH: 0px; BACKGROUND: url("simg_bg.gif"/*tpa=http://ad.zoomla.cn/ad/114/images/simg_bg.gif*/) no-repeat; FILTER: Alpha(opacity=100); BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 2px; PADDING-TOP: 9px; BORDER-RIGHT-WIDTH: 0px
+}
+

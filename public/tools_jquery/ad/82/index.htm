@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="Copyright" content="中国建站之家 http://www.1th.cn/" />
+<meta name="description" content="提供专业的网站建设教程、源代码、网页模板、网页素材下载以及网页设计学习！" />
+<meta content="图片渐变轮换焦点图效果广告代码" name="keywords" />
+<title>图片渐变轮换焦点图效果广告代码</title>
+<style type="text/css">
+body{text-align:center;}
+</style>
+</head>
+
+<body>
+<SCRIPT>
+	var NowFrame = 1;
+	var MaxFrame = 5;
+	var bStart = 0;
+	function fnToggle() {
+	var next = NowFrame + 1;
+	if(next == MaxFrame+1) 
+	{
+	NowFrame = MaxFrame;
+	next = 1;
+	}
+	if(bStart == 0)
+	{
+	bStart = 1;
+			  
+	setTimeout('fnToggle()', 1000);
+	return;
+	}
+	else
+	{
+	oTransContainer.filters[0].Apply();
+	document.images['oDIV'+next].style.display = "";
+	document.images['oDIV'+NowFrame].style.display = "none"; 
+	oTransContainer.filters[0].Play(duration=5);
+	if(NowFrame == MaxFrame) 
+	NowFrame = 1;
+	else
+	NowFrame++;
+	} setTimeout('fnToggle()', 6000);
+	}
+	fnToggle();
+</SCRIPT>
+<!--焦点图片开始-->
+<DIV id=oTransContainer style="FILTER: progid:DXImageTransform.Microsoft.Wipe(GradientSize=1.0, wipeStyle=0, motion='forward'); WIDTH: 243px; HEIGHT: 235px">
+<A href="javascript:if(confirm('http://www.1th.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.1th.cn/'" tppabs="http://www.1th.cn/" target=_blank><IMG id=oDIV1 style="BORDER-RIGHT: black 0px solid; BORDER-TOP: black 0px solid; DISPLAY: yes;  BORDER-LEFT: black 0px solid; BORDER-BOTTOM: black 0px solid" height=235 src="images/01.jpg" tppabs="82/images/01.jpg" width=243 border=0></A>
+<A href="javascript:if(confirm('http://www.1th.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.1th.cn/'" tppabs="http://www.1th.cn/" target=_blank><IMG id=oDIV2 style="BORDER-RIGHT: black 0px solid; BORDER-TOP: black 0px solid; DISPLAY: none; BORDER-LEFT: black 0px solid; BORDER-BOTTOM: black 0px solid" height=235 src="images/02.jpg" tppabs="82/images/02.jpg" width=243 border=0></A>
+<A href="javascript:if(confirm('http://www.1th.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.1th.cn/'" tppabs="http://www.1th.cn/" target=_blank><IMG id=oDIV3 style="BORDER-RIGHT: black 0px solid; BORDER-TOP: black 0px solid; DISPLAY: none; BORDER-LEFT: black 0px solid; BORDER-BOTTOM: black 0px solid" height=235 src="images/03.jpg" tppabs="82/images/03.jpg" width=243 border=0></A>
+<A href="javascript:if(confirm('http://www.1th.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.1th.cn/'" tppabs="http://www.1th.cn/" target=_blank><IMG id=oDIV4 style="BORDER-RIGHT: black 0px solid; BORDER-TOP: black 0px solid; DISPLAY: none; BORDER-LEFT: black 0px solid; BORDER-BOTTOM: black 0px solid" height=235 src="images/04.jpg" tppabs="82/images/04.jpg" width=243 border=0></A>
+<A href="javascript:if(confirm('http://www.1th.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.1th.cn/'" tppabs="http://www.1th.cn/" target=_blank><IMG id=oDIV5 style="BORDER-RIGHT: black 0px solid; BORDER-TOP: black 0px solid; DISPLAY: none; BORDER-LEFT: black 0px solid; BORDER-BOTTOM: black 0px solid" height=235 src="images/05.jpg" tppabs="82/images/05.jpg" width=243 border=0></A>
+</DIV>
+<!--焦点图片结束-->
+<p>更多请访问：<a href="javascript:if(confirm('http://1th.cn/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://1th.cn/'" tppabs="http://1th.cn/" target="_blank">一特广告代码全集-JS广告代码集中营</a></p>
+</body>
+</html>

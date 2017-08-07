@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--STATUS OK-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>图片大小自由切换</title>
+<script language="javascript" src="imageInterim.js" tppabs="136/imageInterim.js"></script>
+<style type="text/css">
+.wrapContentSuitScreen { width:994px; margin:0; position:relative; }
+.wrapContentFullSize { margin:0 auto; }
+.wrapImageSuitScreen { float:left; width:714px; height:471px; margin:25px 0 0 0; text-align:center; overflow:hidden; }
+.wrapImageSuitScreen span#imgWrapSpan { padding:2px; border:1px solid #dedfe1; display:inline-block; }
+.wrapImageFullSize { width:100%; float:none; padding:0; overflow:auto; text-align:center; }
+.wrapImageFullSize span#imgWrapSpan { padding:0; border:none; display:inline-block; }
+#wrapText { width:280px; float:right; margin:25px 0 0 0; height:471px; vertical-align:top; }
+#wrapTextTop { border-bottom:1px solid #dedfe1; border-top:1px solid #dedfe1; }
+#wrapTextTop table { font-size:14px; font-family:simsun; }
+#wrapTextTop table th { text-align:left; width:85px; vertical-align:top; padding:10px 0; }
+#wrapTextTop table td { text-align:left; padding:10px 0; vertical-align:top; }
+#wrapTextTop a { color:#3164cc; }
+#wrapText span { float:right; font-size:12px; padding:10px 20px 0 0; background:url("../../../img.baidu.com/img/baike/imageMbgbt.gif"/*tpa=http://img.baidu.com/img/baike/imageMbgbt.gif*/) no-repeat 100px -64px; line-height:16px; }
+#wrapText span a { color:#000; text-decoration:none; }
+#btBottomWrap { text-align:center; font-size:12px; margin:20px auto; display:none; }
+#btBottom { background:url("../../../img.baidu.com/img/baike/imageMbgbt.gif"/*tpa=http://img.baidu.com/img/baike/imageMbgbt.gif*/) no-repeat 0 -35px; width:183px; line-height:25px; margin:0 auto; text-align:left; }
+#btB1 { padding:0 18px 0 25px; cursor:pointer; zoom:1; }
+#btB2 { font-weight:bold; color:#FFF; padding:0 0 0 30px; }
+#btUpWrap { font-size:12px; width:183px; margin:20px auto; display:none; }
+#btUp { background:url("../../../img.baidu.com/img/baike/imageMbgbt.gif"/*tpa=http://img.baidu.com/img/baike/imageMbgbt.gif*/) no-repeat; width:183px; line-height:25px; margin:0 auto; text-align:left; }
+#btU1 { font-weight:bold; color:#FFF; padding:0 14px 0 25px; }
+#btU2 { padding:0 22px; cursor:pointer; zoom:1; }
+#smallPic { background:url("../../../img.baidu.com/img/baike/imageMbgbt.gif"/*tpa=http://img.baidu.com/img/baike/imageMbgbt.gif*/) no-repeat 0 -106px; width:208px; height:28px; text-align:center; font-size:12px; margin:17px auto 20px; display:none; line-height:35px; overflow:hidden; }
+</style>
+</head>
+<body>
+
+
+	<div id="wrapContent" class="wrapContentSuitScreen">
+    <div id="wrapImage" class="wrapImageSuitScreen"><span id="imgWrapSpan"><img src="images/photo.jpg" tppabs="136/images/photo.jpg" id="mainImage"></span><div id="btUpWrap"><div id="btUp"><span id="btU1">合适尺寸</span><span id="btU2" onClick="fullScreen();nslog(location.href,63)">实际尺寸</span></div></div><div id="smallPic">上图已是实际尺寸</div></div>
+		<div id="wrapText">
+			<div id="wrapTextTop">
+			<table width="100%" cellspacing="0" cellpadding="0">
+				<tr><th>图片说明：</th><td></td></tr>
+				<tr><th>贡献者：</th><td><a href="" target="_blank" id="imageFounder" onClick="nslog(this.href,60);">袋鼠康康</a></td></tr>
+				<tr><th>所属词条：</th><td><b><a href="javascript:if(confirm('http://ad.zoomla.cn/view/421073.htm  \n\n该文件未被 Teleport Pro 下载，因为 服务器报告 - 无法找到该文件。  \n\n你想要从服务器打开它吗?'))window.location='http://ad.zoomla.cn/view/421073.htm'" tppabs="http://ad.zoomla.cn/view/421073.htm" target="_blank" id="imageLemma" onClick="nslog(this.href,61);">陈思思</a></b></td></tr>
+			</table>
+			</div>
+			<span><a href="" target="_blank" id="morePicClick" onClick="nslog(this.href,62);">搜索更多相关图片</a></span>
+		</div>
+	</div>
+	<div id="btBottomWrap"><div id="btBottom"><span id="btB1" onClick="suitScreen();nslog(location.href,64)">合适尺寸</span><span id="btB2">实际尺寸</span></div></div>
+<script type="text/javascript">
+//载入放大效果
+window.onload = bigOrSmall;
+(function(){
+
+})();
+</script>
+
+</body>
+</html>

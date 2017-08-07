@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>通用title提示</title>
+<style>
+DIV {
+        FONT-SIZE: 12pt
+}
+FORM {
+        FONT-SIZE: 9pt
+}
+P {
+        FONT-SIZE: 9pt
+}
+TD {
+        FONT-SIZE: 9pt
+}
+BODY {
+        FONT-SIZE: 9pt
+}
+BODY {
+        SCROLLBAR-HIGHLIGHT-COLOR: buttonface; SCROLLBAR-SHADOW-COLOR: buttonface; SCROLLBAR-3DLIGHT-COLOR: buttonhighlight; SCROLLBAR-TRACK-COLOR: #eeeeee; SCROLLBAR-DARKSHADOW-COLOR: buttonshadow
+}
+.menuskin {
+        BORDER-RIGHT: #9ec5fc 1px solid; BORDER-TOP: #9ec5fc 1px solid;  VISIBILITY: hidden; BORDER-LEFT: #9ec5fc 1px solid; BORDER-BOTTOM: #9ec5fc 1px solid; POSITION: absolute
+}
+.menuitems {
+        PADDING-RIGHT: 1px; PADDING-LEFT: 1px; FONT-SIZE: 9pt; PADDING-BOTTOM: 1px; MARGIN: 2px; LINE-HEIGHT: 14pt; PADDING-TOP: 1px
+}
+#mouseoverstyle {
+        BORDER-RIGHT: #9ec5fc 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #9ec5fc 1px solid; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; BORDER-LEFT: #9ec5fc 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #9ec5fc 1px solid; BACKGROUND-COLOR: #dae9fe
+}
+.menuskin A {
+        PADDING-RIGHT: 10px; PADDING-LEFT: 30px
+}
+A {
+        FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 18px; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+
+pb {
+        FONT-SIZE: 14px; FONT-FAMILY: "宋体"
+}
+A:hover {
+        COLOR: #ff0000; TEXT-DECORATION: underline
+}
+A:visited {
+        COLOR: #000000
+}
+.menu {
+        COLOR: #00009c; TEXT-DECORATION: none
+}
+
+.f7 {
+        FONT-SIZE: 7px; COLOR: #207ab7
+}
+.red {
+        COLOR: #ff3300
+}
+BODY {
+        BACKGROUND-POSITION: center center;  BACKGROUND-REPEAT: repeat-y; BACKGROUND-COLOR: #dee7f7
+}
+TH {
+        FONT-WEIGHT: bold; FONT-SIZE: 12px;  COLOR: white; HEIGHT: 25px; BACKGROUND-COLOR: #4fa0f2
+}
+.Menu_popup {
+        DISPLAY: none
+}
+TD.TableTitle1 {
+        COLOR: #000000; BACKGROUND-COLOR: #6595d6
+}
+TD.TableTitle2 {
+        BACKGROUND-COLOR: #6595d6
+}
+TD.TableBody1 {
+        LINE-HEIGHT: normal; BACKGROUND-COLOR: #ffffff
+}
+TD.TableBody2 {
+        LINE-HEIGHT: normal; BACKGROUND-COLOR: #6595d6
+}
+TD.TableBody3 {
+        BACKGROUND-COLOR: #6595d6
+}
+</style>
+<SCRIPT language=javascript>
+var pltsPop=null;
+var pltsoffsetX = 5;   // 弹出窗口位于鼠标左侧或者右侧的距离；3-12 合适
+var pltsoffsetY = 15;  // 弹出窗口位于鼠标下方的距离；3-12 合适
+var pltsPopbg="#FFFFEE"; //背景色
+var pltsPopfg="#111111"; //前景色
+var pltsTitle="";
+document.write('<div id=pltsTipLayer style="display: none;position: absolute; z-index:10001"></div>');
+function pltsinits()
+{
+    document.onmouseover   = plts;
+    document.onmousemove = moveToMouseLoc;
+}
+function plts()
+{  var o=event.srcElement;
+    if(o.alt!=null && o.alt!=""){o.dypop=o.alt;o.alt=""};
+    if(o.title!=null && o.title!=""){o.dypop=o.title;o.title=""};
+    pltsPop=o.dypop;
+    if(pltsPop!=null&&pltsPop!=""&&typeof(pltsPop)!="undefined")
+    {
+        pltsTipLayer.style.left=-1000;
+        pltsTipLayer.style.display='';
+        var Msg=pltsPop.replace(/\n/g,"<br>");
+        Msg=Msg.replace(/\0x13/g,"<br>");
+        var re=/\{(.[^\{]*)\}/ig;
+        if(!re.test(Msg))pltsTitle="提示";
+        else{
+          re=/\{(.[^\{]*)\}(.*)/ig;
+            pltsTitle=Msg.replace(re,"$1")+"&nbsp;";
+          re=/\{(.[^\{]*)\}/ig;
+          Msg=Msg.replace(re,"");
+          Msg=Msg.replace("<br>","");}
+          var attr=(document.location.toString().toLowerCase().indexOf("http://ad.zoomla.cn/ad/47/list.asp")>0?"nowrap":"");
+               var content =
+              '<table style="FILTER:alpha(opacity=90) shadow(color=#bbbbbb,direction=135);" id=toolTipTalbe border=0><tr><td width="100%"><table class=tableborder1 cellspacing="1" cellpadding="0" style="width:100%">'+
+              '<tr id=pltsPoptop><th height=18 valign=bottom><b><p id=topleft align=left>↖'+pltsTitle+'</p><p id=topright align=right style="display:none">'+pltsTitle+'↗</font></b></th></tr>'+
+              '<tr><td "+attr+" class=tablebody1 style="padding-left:14px;padding-right:14px;padding-top: 6px;padding-bottom:6px;line-height:135%">'+Msg+'</td></tr>'+
+              '<tr id=pltsPopbot style="display:none"><th height=18 valign=bottom><b><p id=botleft align=left>↙'+pltsTitle+'</p><p id=botright align=right style="display:none">'+pltsTitle+'↘</font></b></th></tr>'+
+              '</table></td></tr></table>';
+               pltsTipLayer.innerHTML=content;
+               toolTipTalbe.style.width=Math.min(pltsTipLayer.clientWidth,document.body.clientWidth/2.2);
+               moveToMouseLoc();
+               return true;
+       }
+    else
+    {
+            pltsTipLayer.innerHTML='';
+              pltsTipLayer.style.display='none';
+               return true;
+    }
+}
+
+function moveToMouseLoc()
+{
+        if(pltsTipLayer.innerHTML=='')return true;
+        var MouseX=event.x;
+        var MouseY=event.y;
+        //window.status=event.y;
+        var popHeight=pltsTipLayer.clientHeight;
+        var popWidth=pltsTipLayer.clientWidth;
+        if(MouseY+pltsoffsetY+popHeight>document.body.clientHeight)
+        {
+                  popTopAdjust=-popHeight-pltsoffsetY*1.5;
+                  pltsPoptop.style.display="none";
+                  pltsPopbot.style.display="";
+        }
+         else
+        {
+                   popTopAdjust=0;
+                  pltsPoptop.style.display="";
+                  pltsPopbot.style.display="none";
+        }
+        if(MouseX+pltsoffsetX+popWidth>document.body.clientWidth)
+        {
+                popLeftAdjust=-popWidth-pltsoffsetX*2;
+                topleft.style.display="none";
+                botleft.style.display="none";
+                topright.style.display="";
+                botright.style.display="";
+        }
+        else
+        {
+                popLeftAdjust=0;
+                topleft.style.display="";
+                botleft.style.display="";
+                topright.style.display="none";
+                botright.style.display="none";
+        }
+        pltsTipLayer.style.left=MouseX+pltsoffsetX+document.body.scrollLeft+popLeftAdjust;
+        pltsTipLayer.style.top=MouseY+pltsoffsetY+document.body.scrollTop+popTopAdjust;
+          return true;
+}
+pltsinits();
+</SCRIPT>
+</head>
+
+<BODY leftMargin=0 topMargin=0 rightMargin=0><br /><br /><br /><br />
+<table width="770" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td bgcolor="#FFFFFF"><a href="javascript:if(confirm('http://www.yesky.com/  \n\n该文件未被 Teleport Pro 下载，因为 它位于起始地址以设置的边界以外的域或路径中。  \n\n你想要从服务器打开它吗?'))window.location='http://www.yesky.com/'" tppabs="http://www.yesky.com/"><img src="../../../www.yesky.com/TLimages/img/head/logo.gif" tppabs="http://www.yesky.com/TLimages/img/head/logo.gif" alt="天极Yesky" title="天极Yesky"/></a>鼠标移上来看看</td>
+  </tr>
+</table>
+</body>
+</html>

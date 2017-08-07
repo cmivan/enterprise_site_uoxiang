@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>多图上下拉</title>
+<style type="text/css">
+*{margin:0;padding:0; font-size:12px;}
+ul li{list-style: none;}
+/*--package_slide_list------star--*/
+.package_slide_player {float:left; width:590px; height:280px; margin-bottom:14px;}
+.package_slide_pic { position:relative; width:500px; height:280px; overflow:hidden;}
+.package_slide_pic img { width:500px;}
+.package_slide_pic .package_name { position:absolute; left:0; bottom:0; width:100%; height:29px; background-color:#000; color:#fff; line-height:30px; text-indent:12px; overflow:hidden; filter: alpha(opacity=70);  -moz-opacity: 0.7;-khtml-opacity: 0.7;opacity: 0.7;}
+.package_slide_list { float:right; width:81px; height:280px; background:#CBD2DC; overflow:hidden; }
+.package_slide_list .player_up_off,.package_slide_list .player_down_on,.package_slide_list .player_up_on,.package_slide_list .player_down_off {width:81px; height:27px; background-image:url("../../../pic.ctrip.com/packages090813/un_detail090818.png"/*tpa=http://pic.ctrip.com/packages090813/un_detail090818.png*/);cursor:pointer; }
+.package_slide_list .player_up_off { background-position:0 0;}
+.package_slide_list .player_up_on { background-position:0 -27px;}
+.package_slide_list .player_down_on { background-position:-81px -27px;}
+.package_slide_list .player_down_off { background-position:-81px 0;}
+
+.package_slide_list .slide_pic_list {height:226px; padding:0 3px;}
+.package_slide_list .slide_pic_list li { float:left; width:100%; margin:10px 0 -1px;}
+.package_slide_list .slide_pic_list img { display:block; width:73px; height:43px; border:1px solid #CBD2DC; cursor:pointer;}
+.package_slide_list .slide_pic_list .on img { border:1px solid #f60; }
+.package_slide_list .slide_pic_list li:hover img { border:1px solid #fff;}
+/*--package_slide_list------end--*/
+</style>
+
+</head>
+<body>
+
+<script src="js/tuna_090501.js" tppabs="138/js/tuna_090501.js" charset="utf-8" type="text/javascript"></script>
+<script src="js/public_package_100222.js" tppabs="138/js/public_package_100222.js" charset="utf-8" type="text/javascript"></script>
+<script type="text/javascript" src="js/private_package_details_090825.js" tppabs="138/js/private_package_details_090825.js" charset="utf-8"></script>
+            
+<div class="package_slide_player">
+    <div id="sPic" class="package_slide_list">
+        <div id="up" class="player_up_off">
+        </div>
+        <ul class="slide_pic_list layoutfix">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div id="down" class="player_down_off">
+        </div>
+    </div>
+    <div id="bPic" class="package_slide_pic"><div class="package_name"></div><img src="" alt="" /></div>
+</div>
+
+<script type="text/javascript">
+$$.module.pkgInterface.pkgDetail = {};
+$$.module.pkgInterface.pkgDetail.today = "2010-04-02";
+$$.module.pkgInterface.pkgDetail.pic = [
+	{max:'images/518_10.jpg'/*tpa=http://ad.zoomla.cn/ad/138/images/518_10.jpg*/, min:'images/518_10-s.jpg'/*tpa=http://ad.zoomla.cn/ad/138/images/518_10-s.jpg*/,title:'黄果树瀑布3'},
+	{max:'images/518_05.jpg'/*tpa=http://ad.zoomla.cn/ad/138/images/518_05.jpg*/, min:'images/518_05-s.jpg'/*tpa=http://ad.zoomla.cn/ad/138/images/518_05-s.jpg*/,title:'黄果树瀑布2'},
+	{max:'images/33_04.jpg'/*tpa=http://ad.zoomla.cn/ad/138/images/33_04.jpg*/, min:'images/33_04-s.jpg'/*tpa=http://ad.zoomla.cn/ad/138/images/33_04-s.jpg*/,title:'天星桥'},
+	{max:'images/33_15.jpg'/*tpa=http://ad.zoomla.cn/ad/138/images/33_15.jpg*/, min:'images/33_15-s.jpg'/*tpa=http://ad.zoomla.cn/ad/138/images/33_15-s.jpg*/,title:'镇远古城2'},
+	{max:'images/33_09.jpg'/*tpa=http://ad.zoomla.cn/ad/138/images/33_09.jpg*/, min:'images/33_09-s.jpg'/*tpa=http://ad.zoomla.cn/ad/138/images/33_09-s.jpg*/,title:'花溪河'},
+	{max:'images/33_07.jpg'/*tpa=http://ad.zoomla.cn/ad/138/images/33_07.jpg*/, min:'images/33_07-s.jpg'/*tpa=http://ad.zoomla.cn/ad/138/images/33_07-s.jpg*/,title:'黔灵公园'},
+	{max:'images/518_03.jpg'/*tpa=http://ad.zoomla.cn/ad/138/images/518_03.jpg*/, min:'images/518_03-s.jpg'/*tpa=http://ad.zoomla.cn/ad/138/images/518_03-s.jpg*/,title:'黄果树瀑布1'},
+	{max:'images/518_01.jpg'/*tpa=http://ad.zoomla.cn/ad/138/images/518_01.jpg*/, min:'images/518_01-s.jpg'/*tpa=http://ad.zoomla.cn/ad/138/images/518_01-s.jpg*/,title:'黄果树瀑布4'},
+	{max:'images/33_02.jpg'/*tpa=http://ad.zoomla.cn/ad/138/images/33_02.jpg*/, min:'images/33_02-s.jpg'/*tpa=http://ad.zoomla.cn/ad/138/images/33_02-s.jpg*/,title:'贵阳街道1'}
+];
+</script>
+                
+    
+</body>
+</html>
